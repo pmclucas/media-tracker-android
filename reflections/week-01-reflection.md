@@ -10,7 +10,7 @@
 <!-- Paste a link to your commits for this week. The easiest way: go to your repo on GitHub,
      click "commits", and copy the URL after filtering by your name or branch. -->
 
-**Link:**
+**Link: https://github.com/pmclucas/media-tracker-android/commit/eaa7689a46df09ee1821b4b437556d9dec2647bb**
 
 ---
 
@@ -20,13 +20,15 @@
      Part 1 is the link — I will verify the review exists on GitHub.
      Part 2 is your written assessment — what you actually looked at and what you found. -->
 
-**Reviewed:** *(pod mate's name)*
-**Link to my review:**
+**Reviewed:** *Dustin Marsh (dmarsh31)*
+**Link to my review: https://github.com/dmarsh31/media-tracker-android/pull/2/changes/BASE..0d49a1ff0b5ed6d132e156c6f639c4ae02293eb3**
 
 ### What I Looked At
 
 <!-- Walk through the code you reviewed. What was the PR trying to do? Which files or
      functions did you focus on? -->
+
+MaterialTheme was changed to MediaTrackerTheme() to correct colors to align with design docs.
 
 ### What I Noticed
 
@@ -34,11 +36,14 @@
      done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
      is not specific enough. Name the thing you noticed and explain why it matters. -->
 
+Changes were made correctly.  No apparent errors.
+
 ### Comments I Left
 
 <!-- Briefly summarize the comments you left on the PR. If you left a positive comment,
      say what it was. If you left a suggestion, say what you suggested and why. -->
 
+Provided comment: "Theme update looks good."
 ---
 
 ## One Thing I Understood More Deeply
@@ -47,6 +52,10 @@
      what was confusing before, what made it make sense, and how you'd explain it to someone else.
      There are no wrong answers here. -->
 
+I gained some understanding of the file structure.  
+I also learned about how to manage the app UI resources & 
+adding an image to the Resource Manager and using the image painter.
+
 ---
 
 ## One Thing I'm Still Confused About
@@ -54,12 +63,20 @@
 <!-- Be honest. This is the most useful part of the reflection for me — it tells me where to
      spend more time in class. You will not lose points for being confused. -->
 
+I'm still getting used to navigating github in a group setting.  
+Also, I need to research how to adjust the scaling of the imaged added.
+
+Note: Some instructions were a bit quick.  It would be helpful if you added some delay between saying
+what is being done and actually doing the action.  Most of the actions were done simultaneously.
+
 ---
 
 ## Anything Else *(optional)*
 
 <!-- Did you help a pod mate work through something? Did you discover something cool or frustrating?
      Did something from a previous week finally click? This is a good place to put it. -->
+
+Dustin helped me through creating the pull request and navigating github.
 
 ---
 
