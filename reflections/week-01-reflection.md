@@ -53,7 +53,7 @@ Provided comment: "Theme update looks good."
      There are no wrong answers here. -->
 
 I gained some understanding of the file structure.  
-I also learned about how to manage the app UI resources & 
+I also learned about how to manage the app UI resources &
 adding an image to the Resource Manager and using the image painter.
 
 ---
