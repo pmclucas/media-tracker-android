@@ -1,6 +1,11 @@
 package edu.metrostate.ics342.mediatracker.ui.auth
 
+import android.graphics.Color
+import edu.metrostate.ics342.mediatracker.R     // ADDED
+import androidx.compose.foundation.Image    // ADDED
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -9,11 +14,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -46,6 +54,18 @@ fun LoginScreen(
         verticalArrangement   = Arrangement.Center,
         horizontalAlignment   = Alignment.CenterHorizontally
     ) {
+        // Add Symbol: smart_display
+//        Box(
+//            modifier = Modifier
+//                .border(2.dp, Color.MAGENTA, RoundedCornerShape(8.dp))
+//                .padding(8.dp)
+//        ) {
+            Image(
+                painter = painterResource(id = R.drawable.smart_display),
+                contentDescription = "Descriptive text for accessibility"
+            )
+
+
         Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.app_name), style = MaterialTheme.typography.headlineMedium,
             color = MaterialTheme.colorScheme.primary)
 
@@ -121,4 +141,14 @@ fun LoginScreen(
             Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.register_prompt))
         }
     }
+}
+
+// ADDED DURING CLASS FOR PREVIEW
+@Preview
+@Composable
+fun LoginScreenPreview() {
+    LoginScreen(
+        onLoginSuccess = {},
+        onNavigateToRegister = {}
+    )
 }
