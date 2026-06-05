@@ -37,7 +37,7 @@ Reviewed updates to the LoginScreen and base implementation of RegisterScreen fi
 <!-- Be specific. Did you spot a potential bug? A pattern that could cause problems? Something
      done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
      is not specific enough. Name the thing you noticed and explain why it matters. -->
-The formatting on the loginscreen was done well.  Dustin helped me with this on my end as well.
+The formatting on the loginscreen was done well.  Dustin helped me with this on my end as well. 
 
 ### Comments I Left
 
