@@ -3,6 +3,7 @@ package edu.metrostate.ics342.mediatracker.ui.auth
 import android.graphics.Color
 import edu.metrostate.ics342.mediatracker.R     // ADDED
 import androidx.compose.foundation.Image    // ADDED
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -54,20 +55,22 @@ fun LoginScreen(
         verticalArrangement   = Arrangement.Center,
         horizontalAlignment   = Alignment.CenterHorizontally
     ) {
-        // Add Symbol: smart_display
-//        Box(
-//            modifier = Modifier
-//                .border(2.dp, Color.MAGENTA, RoundedCornerShape(8.dp))
-//                .padding(8.dp)
-//        ) {
-            Image(
+            val imageModifier = Modifier
+            .size(75.dp)
+            .background(MaterialTheme.colorScheme.primaryContainer,
+                shape = RoundedCornerShape(16.dp))
+            .padding(18.dp)
+
+            Icon(
+                modifier = imageModifier,
                 painter = painterResource(id = R.drawable.smart_display),
-                contentDescription = "Descriptive text for accessibility"
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary
             )
 
 
         Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.app_name), style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.primary)
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         Spacer(Modifier.height(8.dp))
 
@@ -138,13 +141,14 @@ fun LoginScreen(
         Spacer(Modifier.height(16.dp))
 
         TextButton(onClick = onNavigateToRegister) {
+            // Change "Sign Up" to be in purple bold text
             Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.register_prompt))
         }
     }
 }
 
 // ADDED DURING CLASS FOR PREVIEW
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun LoginScreenPreview() {
     LoginScreen(
