@@ -1,12 +1,6 @@
 package edu.metrostate.ics342.mediatracker.ui.auth
 
-import android.graphics.Color
-import edu.metrostate.ics342.mediatracker.R     // ADDED
-import androidx.compose.foundation.Image    // ADDED
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -15,16 +9,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import edu.metrostate.ics342.mediatracker.theme.MediaTrackerTheme
 
 @Composable
 fun LoginScreen(
@@ -55,22 +48,8 @@ fun LoginScreen(
         verticalArrangement   = Arrangement.Center,
         horizontalAlignment   = Alignment.CenterHorizontally
     ) {
-            val imageModifier = Modifier
-            .size(75.dp)
-            .background(MaterialTheme.colorScheme.primaryContainer,
-                shape = RoundedCornerShape(16.dp))
-            .padding(18.dp)
-
-            Icon(
-                modifier = imageModifier,
-                painter = painterResource(id = R.drawable.smart_display),
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.primary
-            )
-
-
         Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.app_name), style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
+            color = MaterialTheme.colorScheme.primary)
 
         Spacer(Modifier.height(8.dp))
 
@@ -141,18 +120,18 @@ fun LoginScreen(
         Spacer(Modifier.height(16.dp))
 
         TextButton(onClick = onNavigateToRegister) {
-            // Change "Sign Up" to be in purple bold text
             Text(stringResource(edu.metrostate.ics342.mediatracker.R.string.register_prompt))
         }
     }
 }
 
-// ADDED DURING CLASS FOR PREVIEW
-@Preview(showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen(
-        onLoginSuccess = {},
-        onNavigateToRegister = {}
-    )
+    MediaTrackerTheme {
+        LoginScreen(
+            onLoginSuccess = {},
+            onNavigateToRegister = {}
+        )
+    }
 }

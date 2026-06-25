@@ -1,9 +1,17 @@
 import com.android.build.api.dsl.ApplicationExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+}
+
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.inputStream().use { load(it) }
+    }
 }
 
 extensions.configure<ApplicationExtension> {
@@ -18,6 +26,11 @@ extensions.configure<ApplicationExtension> {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_USER_NAME", "\"${localProperties.getProperty("API_USER_NAME") ?: ""}\"")
+        buildConfigField("String", "API_USER_EMAIL", "\"${localProperties.getProperty("API_USER_EMAIL") ?: ""}\"")
+        buildConfigField("String", "API_CLIENT_ID", "\"${localProperties.getProperty("API_CLIENT_ID") ?: ""}\"")
+        buildConfigField("String", "API_CLIENT_SECRET", "\"${localProperties.getProperty("API_CLIENT_SECRET") ?: ""}\"")
     }
 
     buildTypes {
@@ -35,6 +48,7 @@ extensions.configure<ApplicationExtension> {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -60,7 +74,7 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.retrofit)
-    implementation(libs.retrofit.converters.kotlinx.serializtion)
+    implementation(libs.retrofit.converters.kotlinx.serialization)
     implementation(libs.kotlinx.serialization)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
