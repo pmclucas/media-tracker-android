@@ -2,7 +2,6 @@ package edu.metrostate.ics342.mediatracker.data.network
 
 import edu.metrostate.ics342.mediatracker.data.RegisterResult
 import edu.metrostate.ics342.mediatracker.data.UserRepository
-import java.io.IOException
 
 class DefaultUserRepository(
     private val service: UserApiService = RetrofitInstance.userApiService
@@ -30,7 +29,7 @@ class DefaultUserRepository(
                 409 -> RegisterResult.Conflict
                 else -> RegisterResult.UnknownError
             }
-        } catch (e: IOException) {
+        } catch (e: Exception) {
             RegisterResult.NetworkError
         }
     }
